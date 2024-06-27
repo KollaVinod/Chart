@@ -12,12 +12,13 @@ import {
 } from 'recharts'
 import ExportButton from './ExportButton'
 import {fetchChartData} from '../data/dataService'
+import './Chart.css'
 
 const filterDataByTimeframe = (data, timeframe) => {
   const now = new Date()
   switch (timeframe) {
     case 'daily':
-      return data // Display the full data for daily view
+      return data
     case 'weekly':
       return data.filter(item => {
         const date = new Date(item.timestamp)
@@ -45,6 +46,7 @@ const filterDataByTimeframe = (data, timeframe) => {
 
 const Chart = ({timeframe}) => {
   const chartRef = useRef(null)
+
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -59,14 +61,19 @@ const Chart = ({timeframe}) => {
 
   return (
     <div id='chart' ref={chartRef}>
-      <ResponsiveContainer width='100%' height={400}>
-        <LineChart data={filteredData}>
+      <ResponsiveContainer width='100%' height={400} className='stylo'>
+        <LineChart data={filteredData} className='distance'>
           <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='timestamp' />
+          <XAxis dataKey='timestamp' className='distance' />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type='monotone' dataKey='value' stroke='#8884d8' />
+          <Line
+            type='monotone'
+            dataKey='value'
+            stroke='#8884d8'
+            strokeWidth={2}
+          />
           <Brush dataKey='timestamp' height={30} stroke='#8884d8' />
         </LineChart>
       </ResponsiveContainer>

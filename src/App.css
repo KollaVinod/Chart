@@ -1,11 +1,58 @@
 .app {
   font-family: Arial, sans-serif;
   text-align: center;
-  
-  }
+}
 
 .chart-container {
   width: 100%;
   max-width: 800px;
   margin: auto;
+}
+.App {
+  text-align: center;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeframe-selector {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.timeframe-selector button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  flex: 1;
+  max-width: 120px; /* Ensure buttons are not too wide */
+}
+
+.timeframe-selector button:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .timeframe-selector {
+    flex-wrap: nowrap; /* Prevent wrapping on mobile */
+  }
+
+  .timeframe-selector button {
+    margin: 0 5px; /* Adjust margin for smaller screens */
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+
+  .chart-container {
+    width: 95%; /* Ensure the chart fits within the screen */
+  }
 }

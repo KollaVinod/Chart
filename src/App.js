@@ -11,9 +11,9 @@ const App = () => {
   }
 
   return (
-    <div className="app">
-      <h1>Charting Library Application</h1>
-      <div className="chart-container">
+    <div className='app'>
+      <h1 className='chart-text'>Charting Library Application</h1>
+      <div className='chart-container'>
         <TimeframeSelector onSelect={handleTimeframeChange} />
         <Chart timeframe={timeframe} />
       </div>

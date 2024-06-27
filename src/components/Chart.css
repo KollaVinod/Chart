@@ -1,8 +1,35 @@
-.chart-container {
-  width: 100%;
-  max-width: 100%;
-  margin: auto;
+/* styles/Chart.css */
+
+#chart {
+  margin: 15px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .stylo {
-  background-color: red;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.distance {
+  font-size: 14px;
+  font-family: 'Arial, sans-serif';
+  color: #333;
+}
+
+.distance .recharts-cartesian-axis-tick-value {
+  fill: #8884d8;
+}
+
+.recharts-tooltip-wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.recharts-brush .recharts-brush-slide {
+  fill: #8884d8;
+  opacity: 0.2;
 }
